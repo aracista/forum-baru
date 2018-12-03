@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Forum;
-use App\Tag;
 class HomeController extends Controller
 {
     /**
@@ -25,7 +24,6 @@ class HomeController extends Controller
     public function index()
     {
         $forum = Forum::orderBy('id','desc')->paginate(5);
-        $tag = Tag::all();
-        return view('home',compact('forum','tag'));
+        return view('home',compact('forum'));
     }
 }

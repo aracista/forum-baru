@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-@if(auth()->user()->id == $forum->user_id)
+@if(auth()->user()->id== $forum->user_id)
 <div class="row">
   <div class="col-md-8">
     <div class="card card-body bg-secondary">

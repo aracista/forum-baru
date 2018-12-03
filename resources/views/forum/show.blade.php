@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="show-header">
+<div class="show-header"> 
 	<h1>{{$forum->title}}</h1>
 	<div>
 		<a href="{{route('forum.create')}}" class="btn btn-primary float-right">Buat Pertanyaan</a>
@@ -19,7 +19,7 @@
 		    <p class="card-title">
 		    	{{$forum->post}}
 		    </p>
-		    <p class="card-text float-right">By &nbsp;<a href="#">{{$forum->user->name}} &nbsp;</a>{{$forum->created_at->diffForHumans()}}</p>
+		    <p class="card-text float-right">By &nbsp;<a href="#">{{$forum->user->name}}a &nbsp;</a>{{$forum->created_at->diffForHumans()}}</p>
 		  </div>
 		</div>
 		<hr>
@@ -50,7 +50,7 @@
 		@if(auth()->user()->id== $forum->user_id)
 		<a href="{{route('forum.edit', $forum->slug)}}" class="btn btn-success btn-block">Edit</a>
 		<br>
-		<form action="{{route('forum.destroy', $forum->slug)}}" method="post" accept-charset="utf-8">
+		<form action="{{route('forum.destroy', $forum->id)}}" method="post" accept-charset="utf-8">
 			@method('DELETE')
 			@csrf
 			<input type="submit" value="Hapus" class="btn btn-danger btn-block">
